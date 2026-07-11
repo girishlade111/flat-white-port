@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 3%;
+    --foreground: 0 0% 100%;
+    --card: 220 24% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 220 24% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 220 33% 3%;
+    --secondary: 220 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 18% 12%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 39 53% 64%;
+    --accent-foreground: 220 33% 3%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.08;
+    --ring: 39 53% 64%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-white/[0.08];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-flatwhite-base text-text-primary antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(217, 177, 111, 0.3);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flatwhite-accent focus-visible:ring-offset-2 focus-visible:ring-offset-flatwhite-base;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/[0.08];
+  }
+
+  .text-secondary {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
